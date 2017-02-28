@@ -25,11 +25,7 @@ cd $ROM_TREE/frameworks/ex
 git clean -f -d && git reset --hard
 cd $ROM_TREE/frameworks/base
 git clean -f -d && git reset --hard
-cd $ROM_TREE/frameworks/ex
-git clean -f -d && git reset --hard
 cd $ROM_TREE/frameworks/native
-git clean -f -d && git reset --hard
-cd $ROM_TREE/frameworks/opt/net/wifi
 git clean -f -d && git reset --hard
 cd $ROM_TREE/hardware/libhardware
 git clean -f -d && git reset --hard
