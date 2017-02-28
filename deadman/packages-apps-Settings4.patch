@@ -1,0 +1,32 @@
+From 18983e1044b3a8b0fda3f3f314e90b82ceb711a7 Mon Sep 17 00:00:00 2001
+From: deadman96385 <seanhoyt963@gmail.com>
+Date: Tue, 28 Feb 2017 00:28:37 -0600
+Subject: [PATCH] Disable mod verison and api
+
+Change-Id: Ib28288e9e56fa7eeec7c752a1bc9ca3b8d164a06
+---
+ src/com/android/settings/DeviceInfoSettings.java | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/src/com/android/settings/DeviceInfoSettings.java b/src/com/android/settings/DeviceInfoSettings.java
+index 3eb2f90..0fa355a 100644
+--- a/src/com/android/settings/DeviceInfoSettings.java
++++ b/src/com/android/settings/DeviceInfoSettings.java
+@@ -144,12 +144,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
+         final Preference kernelPref = findPreference(KEY_KERNEL_VERSION);
+         kernelPref.setEnabled(true);
+         kernelPref.setSummary(getFormattedKernelVersion());
+-        findPreference(KEY_MOD_VERSION).setSummary(
+-                cyanogenmod.os.Build.CYANOGENMOD_DISPLAY_VERSION);
+-        findPreference(KEY_MOD_VERSION).setEnabled(true);
++        getPreferenceScreen().removePreference(findPreference(KEY_MOD_VERSION));
++        getPreferenceScreen().removePreference(findPreference(KEY_MOD_API_LEVEL));
+         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
+         setExplicitValueSummary(KEY_MOD_API_LEVEL, constructApiLevelString());
+-        findPreference(KEY_MOD_API_LEVEL).setEnabled(true);
+         findPreference(KEY_MOD_BUILD_DATE).setEnabled(true);
+ 
+         if (!SELinux.isSELinuxEnabled()) {
+-- 
+2.7.4
+

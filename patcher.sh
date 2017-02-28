@@ -65,6 +65,7 @@ patch -d packages/apps/Settings			-p1 -s -N --no-backup-if-mismatch < $CUSTOM/pa
 patch -d packages/apps/Settings			-p1 -s -N --no-backup-if-mismatch < $CUSTOM/packages-apps-Settings1.patch
 patch -d packages/apps/Settings			-p1 -s -N --no-backup-if-mismatch < $CUSTOM/packages-apps-Settings2.patch
 patch -d packages/apps/Settings			-p1 -s -N --no-backup-if-mismatch < $CUSTOM/packages-apps-Settings3.patch
+patch -d packages/apps/Settings			-p1 -s -N --no-backup-if-mismatch < $CUSTOM/packages-apps-Settings4.patch
 
 ### Security patches
 # 2017-01-01
